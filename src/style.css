@@ -1,3 +1,22 @@
-.header-container {
-    background-color: rgb(144, 144, 209);
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
+
+html, body {
+    height: 100%;   
+}
+
+.top-nav {   
+    display: grid;    
+    align-items: center;
+    grid-template-columns: 1fr 360px 1fr;   
+}
+
+.top-nav form {
+    justify-self: center;    
+}
+
+  
+
