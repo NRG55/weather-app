@@ -22,6 +22,7 @@ function weatherDataMapper(data) {
     return {
         city: data.location.name,
         temperature: data.current.temp_c,
+        icon: data.current.condition.icon
 
     }
 
