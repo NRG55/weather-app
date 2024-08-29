@@ -20,6 +20,8 @@ html, body {
 }
 
 main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding: 40px;
 }
 
@@ -37,6 +39,9 @@ main {
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 16px;
     padding: 20px;
+    margin-right: 40px;
     color: white;
+
  }
+
 
