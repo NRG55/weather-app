@@ -1,8 +1,8 @@
 import { updateTodayInfoCard } from "./ui";
 
 export const getWeather = async (location) => {
-    const apiKey = 'b87c3740ed6b4c5db6522324242508';
-    const url = `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}`;
+    const apiKey = 'ZFEZ9FB6LLYZUZ9DFDU7GJTMD';
+    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${apiKey}`;
 
     try {
     const response = await fetch(url, { mode: 'cors'});
@@ -20,10 +20,9 @@ export const getWeather = async (location) => {
 function weatherDataMapper(data) {
     console.log(data)
     return {
-        city: data.location.name,
-        temperature: data.current.temp_c,
-        icon: data.current.condition.icon
-
+        location: data.resolvedAddress,
+        temperature: data.currentConditions.temp,
+        icon: data.currentConditions.icon
     }
 
 }

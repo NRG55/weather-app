@@ -32,8 +32,8 @@ main {
  .today-info-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 300px;
-    height: 200px;  
+    width: 400px;
+    height: 300px;  
     border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 16px;
     padding: 20px;
