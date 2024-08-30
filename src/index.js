@@ -14,7 +14,7 @@ const weatherData = await getWeather("Dublin");
 updateTodayWeatherInfoCard(weatherData.location, weatherData.temperature, weatherData.icon)
 
 // run()
-renderDailyWeather()
+renderDailyWeather(weatherData)
 // const weekWeatherInfoContainer = document.querySelector('.week-weather-info-container')
 // console.log(renderDailyWeather())
 // weekWeatherInfoContainer.append(renderDailyWeather())

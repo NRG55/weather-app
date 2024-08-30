@@ -4,19 +4,18 @@ export function updateTodayWeatherInfoCard(location, temperature, icon) {
     document.querySelector('#icon').src = 'images/drizzle.svg';
 }
 
-const weather = [1, 2, 3, 4, 5, 6, 7]
-export const renderDailyWeather = () => {
+export const renderDailyWeather = (weather) => {
     const weekWeatherInfoContainer = document.querySelector('.week-weather-info-container');
 
-    weather.map((day) => {       
+    weather.weekForecast.map((element) => {       
         weekWeatherInfoContainer.innerHTML += `
-        <div className="week-day-weather-row">
-          <div className="week-day-name">${day}</div>
-          <div className="week-day-temperature">dayTemperature</div>
-          <div className="week-night-temperature">nightTemeperature</div>
-          <div className="week-day-weather-image">Image
+        <div class="week-day-weather-row">
+          <div class="week-day-name">${element.weekDay}</div>
+          <div class="week-day-temperature">${element.maxTemperature}</div>
+          <div class="week-night-temperature">${element.minTemperature}</div>
+          <div class="week-day-weather-image">${element.icon}
              <img
-              className="week-day-weather-icon"
+              class="week-day-weather-icon"
               src=""
               alt=""
               />

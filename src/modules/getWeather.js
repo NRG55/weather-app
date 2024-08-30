@@ -22,7 +22,16 @@ function weatherDataMapper(data) {
     return {
         location: data.resolvedAddress,
         temperature: data.currentConditions.temp,
-        icon: data.currentConditions.icon
-    }
+        conditions: data.currentConditions.conditions,
+        humidity: data.currentConditions.humidity,
+        windSpeed: data.currentConditions.windspeed,
+        icon: data.currentConditions.icon,
+        weekForecast: data.days.slice(1, 8).map(day => ({
+                        weekDay: new Date(day.datetime).toLocaleDateString('en-US', {weekday: 'long'}),
+                        maxTemperature: day.tempmax,
+                        minTemperature: day.tempmin,                        
+                        icon: day.icon
+                        }))
+    };
 
 }

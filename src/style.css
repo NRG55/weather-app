@@ -41,7 +41,17 @@ main {
     padding: 20px;
     margin-right: 40px;
     color: white;
+ }
 
+ .week-weather-info-container {
+    display: grid;
+    color: white;
+ }
+
+ .week-day-weather-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;    
  }
 
 
