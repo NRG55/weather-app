@@ -26,12 +26,17 @@ function weatherDataMapper(data) {
         humidity: data.currentConditions.humidity,
         windSpeed: data.currentConditions.windspeed,
         icon: data.currentConditions.icon,
+        hourelyForecast: data.days[0].hours.map(hour => ({
+                            time: hour.datetime,
+                            temperature: hour.temp,
+                            icon: hour.icon
+                        })),
         weekForecast: data.days.slice(1, 8).map(day => ({
-                        weekDay: new Date(day.datetime).toLocaleDateString('en-US', {weekday: 'long'}),
-                        maxTemperature: day.tempmax,
-                        minTemperature: day.tempmin,                        
-                        icon: day.icon
+                            weekDay: new Date(day.datetime).toLocaleDateString('en-US', {weekday: 'long'}),
+                            maxTemperature: day.tempmax,
+                            minTemperature: day.tempmin,                        
+                            icon: day.icon
                         }))
+        
     };
-
 }
