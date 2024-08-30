@@ -27,7 +27,7 @@ export const renderTodayWeatherInfoCard = (weather) => {
         <h3 class="location-name">${weather.location}</h3>
         <p class="today-temperature">${weather.temperature}</p>
         <img src="images/drizzle.svg" id="today-weather-icon" alt="today-weather-icon"> 
-        <p id="feelsLike">Feels like:</p>
+        <p class="today-conditions">${weather.conditions}</p>
        
     `; 
     
@@ -37,7 +37,32 @@ export const renderTodayWeatherInfoCard = (weather) => {
         <p id="wind">Wind:${weather.windSpeed}</p>
     `;
 
-    todayWeatherInfoCard.append(mainWeatherInfoDiv, additionalWeatherInfoDiv);
+    const hourlyWeatherInfoDiv = document.createElement('div');
+    hourlyWeatherInfoDiv.classList.add('hourly-weather-info-container');
+    // hourlyWeatherInfoDiv.innerHTML = "HOURLY INFO DIV"
+
+    todayWeatherInfoCard.append(mainWeatherInfoDiv, additionalWeatherInfoDiv, hourlyWeatherInfoDiv);
+    
+    renderHourlyWeatherInfo(weather);
 
     return todayWeatherInfoCard;
+}
+
+const renderHourlyWeatherInfo = (weather) => {
+    const hourlyWeatherInfoContainer = document.querySelector('.hourly-weather-info-container');
+
+    weather.hourlyForecast.map((hour) => {       
+        hourlyWeatherInfoContainer.innerHTML += `
+        <div class="hourly-weather-column">
+          <div class="hourly-weather-time">${hour.time}</div>
+          <div class="hourly-weather-image">${hour.icon}
+             <img
+              class="hourly-weather-image"
+              src=""
+              alt=""
+              />
+          </div>    
+          <div class="hourly-weather-temperature">${hour.temperature}</div>               
+        </div>`         
+    });
 }

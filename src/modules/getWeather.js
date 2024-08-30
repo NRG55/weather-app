@@ -26,8 +26,8 @@ function weatherDataMapper(data) {
         humidity: data.currentConditions.humidity,
         windSpeed: data.currentConditions.windspeed,
         icon: data.currentConditions.icon,
-        hourelyForecast: data.days[0].hours.map(hour => ({
-                            time: hour.datetime,
+        hourlyForecast: data.days[0].hours.map(hour => ({
+                            time: hour.datetime.slice(0, 2),
                             temperature: hour.temp,
                             icon: hour.icon
                         })),

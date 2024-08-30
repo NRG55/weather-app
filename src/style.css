@@ -54,4 +54,11 @@ main {
     gap: 20px;    
  }
 
+ .hourly-weather-info-container {
+    display: grid;
+    grid-column: 1 / 3;
+    grid-auto-flow: column;
+    overflow: hidden;
+ }
+
 
