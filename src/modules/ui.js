@@ -41,7 +41,7 @@ export const renderTodayWeatherInfoCard = (weather) => {
     hourlyWeatherInfoDiv.classList.add('hourly-weather-info-container');
     // hourlyWeatherInfoDiv.innerHTML = "HOURLY INFO DIV"
 
-    todayWeatherInfoCard.append(mainWeatherInfoDiv, additionalWeatherInfoDiv, hourlyWeatherInfoDiv);
+    todayWeatherInfoCard.append(mainWeatherInfoDiv, additionalWeatherInfoDiv, hourlyWeatherInfoDiv, renderSlider());
     
     renderHourlyWeatherInfo(weather);
 
@@ -65,4 +65,21 @@ const renderHourlyWeatherInfo = (weather) => {
           <div class="hourly-weather-temperature">${hour.temperature}</div>               
         </div>`         
     });
+}
+
+const renderSlider = () => {
+    const sliderContainer = document.createElement('div');
+
+    sliderContainer.innerHTML = `
+     <div class="nav-container">
+            <button id="button-previous"></button>
+            <div class="round-buttons-container">
+                <button></button>
+                <button></button>
+                <button></button>
+            </div>
+            <button id="button-next"></button>            
+        </div>
+    `
+    return sliderContainer;
 }
