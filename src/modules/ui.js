@@ -39,9 +39,10 @@ export const renderTodayWeatherInfoCard = (weather) => {
 
     const hourlyWeatherInfoDiv = document.createElement('div');
     hourlyWeatherInfoDiv.classList.add('hourly-weather-info-container');
+    hourlyWeatherInfoDiv.appendChild(renderSlider());
     // hourlyWeatherInfoDiv.innerHTML = "HOURLY INFO DIV"
 
-    todayWeatherInfoCard.append(mainWeatherInfoDiv, additionalWeatherInfoDiv, hourlyWeatherInfoDiv, renderSlider());
+    todayWeatherInfoCard.append(mainWeatherInfoDiv, additionalWeatherInfoDiv, hourlyWeatherInfoDiv);
     
     renderHourlyWeatherInfo(weather);
 
@@ -49,10 +50,10 @@ export const renderTodayWeatherInfoCard = (weather) => {
 }
 
 const renderHourlyWeatherInfo = (weather) => {
-    const hourlyWeatherInfoContainer = document.querySelector('.hourly-weather-info-container');
+    const sliderContent = document.querySelector('.slider-content');
 
     weather.hourlyForecast.map((hour) => {       
-        hourlyWeatherInfoContainer.innerHTML += `
+        sliderContent.innerHTML += `
         <div class="hourly-weather-column">
           <div class="hourly-weather-time">${hour.time}</div>
           <div class="hourly-weather-image">${hour.icon}
@@ -69,9 +70,11 @@ const renderHourlyWeatherInfo = (weather) => {
 
 const renderSlider = () => {
     const sliderContainer = document.createElement('div');
+    sliderContainer.classList.add('slider-container');
 
-    sliderContainer.innerHTML = `
-     <div class="nav-container">
+    sliderContainer.innerHTML = `        
+        <div class="slider-content"></div>
+        <div class="nav-container">
             <button id="button-previous"></button>
             <div class="round-buttons-container">
                 <button></button>
@@ -79,7 +82,7 @@ const renderSlider = () => {
                 <button></button>
             </div>
             <button id="button-next"></button>            
-        </div>
+        </div>         
     `
     return sliderContainer;
 }
