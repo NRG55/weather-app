@@ -39,8 +39,7 @@ export const renderTodayWeatherInfoCard = (weather) => {
 
     const hourlyWeatherInfoDiv = document.createElement('div');
     hourlyWeatherInfoDiv.classList.add('hourly-weather-info-container');
-    hourlyWeatherInfoDiv.innerHTML = renderSlider();
-    // hourlyWeatherInfoDiv.innerHTML = "HOURLY INFO DIV"
+    hourlyWeatherInfoDiv.innerHTML = renderSlider();   
 
     todayWeatherInfoCard.append(mainWeatherInfoDiv, additionalWeatherInfoDiv, hourlyWeatherInfoDiv);
     
@@ -74,6 +73,7 @@ const renderSlider = () => {
         <div class="nav-container">
             <button id="button-previous"></button>
             <div class="round-buttons-container">
+                <button></button>
                 <button></button>
                 <button></button>
                 <button></button>
