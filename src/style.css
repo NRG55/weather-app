@@ -61,14 +61,10 @@ main {
     position: relative;    
  }
 
- /* .slider-container {        
-     
- } */
-
  .slider-content {
     display: grid;
     grid-auto-flow: column;
-    overflow: hidden;        
+    /* overflow: hidden;         */
  }
 
  .nav-container {
