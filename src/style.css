@@ -58,13 +58,14 @@ main {
     display: grid;
     grid-column: 1 / 3;
     padding: 28px;
-    position: relative;    
+    position: relative;
+    overflow: hidden;    
  }
 
  .slider-content {
     display: grid;
     grid-auto-flow: column;
-    /* overflow: hidden;         */
+    position: absolute;           
  }
 
  .nav-container {
