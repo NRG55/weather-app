@@ -36,12 +36,19 @@ export const renderTodayWeatherInfoCard = (weather) => {
         <p id="humidity">Humidity:${weather.humidity}</p>
         <p id="wind">Wind:${weather.windSpeed}</p>
     `;
+    
+    const hourlyWeatherInfoContainer = document.createElement('div');
+    hourlyWeatherInfoContainer.classList.add('hourly-weather-info-container');
 
-    const hourlyWeatherInfoDiv = document.createElement('div');
-    hourlyWeatherInfoDiv.classList.add('hourly-weather-info-container');
-    hourlyWeatherInfoDiv.innerHTML = renderSlider();   
+    const sliderWrap = document.createElement('div');
+    
+    hourlyWeatherInfoContainer.innerHTML = renderSliderNavigationPanel();
+    hourlyWeatherInfoContainer.appendChild(sliderWrap);
 
-    todayWeatherInfoCard.append(mainWeatherInfoDiv, additionalWeatherInfoDiv, hourlyWeatherInfoDiv);
+    sliderWrap.classList.add('slider-wrap');
+    sliderWrap.innerHTML = renderSlider();   
+
+    todayWeatherInfoCard.append(mainWeatherInfoDiv, additionalWeatherInfoDiv, hourlyWeatherInfoContainer);
     
     renderHourlyWeatherInfo(weather);
 
@@ -69,7 +76,12 @@ const renderHourlyWeatherInfo = (weather) => {
 
 const renderSlider = () => {
     return `        
-        <div class="slider-content"></div>
+        <div class="slider-content"></div>                
+    `;
+}
+
+const renderSliderNavigationPanel = () => {
+    return `
         <div class="nav-container">
             <button id="button-previous"></button>
             <div class="round-buttons-container">
@@ -79,7 +91,7 @@ const renderSlider = () => {
                 <button></button>
             </div>
             <button id="button-next"></button>            
-        </div>         
-    `;
+        </div> 
+    `
 }
 

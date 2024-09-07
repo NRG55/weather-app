@@ -55,9 +55,13 @@ main {
  }
 
  .hourly-weather-info-container {
+    position: relative;
     display: grid;
     grid-column: 1 / 3;
-    padding: 28px;
+    padding: 0 32px;
+ }
+
+ .slider-wrap {    
     position: relative;
     overflow: hidden;    
  }
