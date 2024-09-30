@@ -19,6 +19,42 @@ html, body {
     justify-self: center;    
 }
 
+.search-container {
+    display: grid;
+    grid-template-columns: 1fr auto;  
+}
+
+.search-input {
+    height: 40px;
+    padding: 10px;
+    border: 1px solid white;
+    border-right: transparent;
+    border-radius: 50px 0px 0px 50px;
+    font-size: 16px;
+    background-color: transparent;
+    outline: none;
+    color: white;     
+}
+
+.search-input::placeholder {
+    color: rgb(177, 177, 179);
+}
+
+.search-input::-webkit-search-cancel-button {
+    display: none;
+}
+
+.search-submit-button {
+    cursor: pointer;   
+    height: 40px;
+    width: 40px;
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 0px 50px 50px 0px;
+    border-left: transparent;
+}
+
 main {
     display: grid;
     grid-template-columns: 1fr 1fr;
