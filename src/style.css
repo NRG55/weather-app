@@ -100,8 +100,6 @@ main {
     border-top: 1px solid rgba(255, 255, 255, .2);    
  }
 
-
-
  .hourly-weather-info-container {
     position: relative;
     display: grid;
@@ -187,6 +185,62 @@ main {
     height: 36px;
     width: 36px;
 }
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 66px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, .2);
+    border-radius: 50px;
+  }  
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }  
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;    
+    height: 28px;
+    width: 28px;
+    left: 4px;
+    bottom: 4px;
+    content: "°C";
+    display: grid;
+    place-content: center;
+    color: #1e3c72;
+    font-weight: 900;
+    background-color: #a4b5d3;
+    -webkit-transition: .4s;
+    transition: .4s;    
+  }
+  
+  input:checked + .slider:before {
+    content: '°F';    
+  }  
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  } 
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
 
 
 

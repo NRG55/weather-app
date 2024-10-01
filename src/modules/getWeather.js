@@ -2,7 +2,7 @@ import { updateTodayInfoCard } from "./ui";
 
 export const getWeather = async (location) => {
     const apiKey = 'ZFEZ9FB6LLYZUZ9DFDU7GJTMD';
-    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?key=${apiKey}`;
+    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=${apiKey}`;
 
     try {
     const response = await fetch(url, { mode: 'cors'});
