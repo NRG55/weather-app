@@ -5,18 +5,19 @@ export const renderDailyWeather = (weather) => {
         weekWeatherInfoContainer.innerHTML += `
         <div class="week-day-weather-row">
           <div class="week-day-name">${element.weekDay}</div>
-          <div class="week-day-weather-image">${element.icon}
+          <div class="week-day-weather-image">
              <img
               class="week-day-weather-icon"
-              src=""
+              src="images/weather-images-filled/${element.icon}.svg"
               alt=""
               />
           </div>    
           <div class="week-day-temperature">${element.maxTemperature}</div>
-          <div class="week-night-temperature">${element.minTemperature}</div>
-                
-        </div>`         
+          <div class="week-night-temperature">${element.minTemperature}</div>                
+        </div>`                 
     });
+
+    weekWeatherInfoContainer.children[0].style.border = 'none';
 }
 
 export const renderTodayWeatherInfoCard = (weather) => {
@@ -26,7 +27,7 @@ export const renderTodayWeatherInfoCard = (weather) => {
     mainWeatherInfoDiv.innerHTML = `
         <h3 class="location-name">${weather.location}</h3>
         <p class="today-temperature">${weather.temperature}</p>
-        <img src="images/drizzle.svg" id="today-weather-icon" alt="today-weather-icon"> 
+        <img src="images/weather-images-filled/${weather.icon}.svg"> 
         <p class="today-conditions">${weather.conditions}</p>
        
     `; 
@@ -62,10 +63,10 @@ const renderHourlyWeatherInfo = (weather) => {
         sliderContent.innerHTML += `
         <div class="hourly-weather-column">
           <div class="hourly-weather-time">${hour.time}</div>
-          <div class="hourly-weather-image">${hour.icon}
+          <div class="hourly-weather-image">
              <img
               class="hourly-weather-image"
-              src=""
+              src="images/weather-images-lined/${hour.icon}.svg"
               alt=""
               />
           </div>    

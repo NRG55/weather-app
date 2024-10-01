@@ -27,7 +27,7 @@ html, body {
 .search-input {
     height: 40px;
     padding: 10px;
-    border: 1px solid white;
+    border: 2px solid rgba(255, 255, 255, .2);
     border-right: transparent;
     border-radius: 50px 0px 0px 50px;
     font-size: 16px;
@@ -50,9 +50,14 @@ html, body {
     width: 40px;
     color: white;
     background-color: transparent;
-    border: 1px solid white;
+    border: 2px solid rgba(255, 255, 255, .2);
     border-radius: 0px 50px 50px 0px;
     border-left: transparent;
+
+    img {
+        height: 24px;
+        width: 24px;
+    }
 }
 
 main {
@@ -61,10 +66,8 @@ main {
     padding: 40px;
 }
 
- img {
-    width: 80px;
-    /* height: 40px; */
-    /* background-image: url('images/drizzle.svg'); */
+ img {   
+    width: 120px;    
  } 
 
  .today-info-card {
@@ -79,6 +82,12 @@ main {
     color: white;
  }
 
+ .week-weather-info-container:first-child {
+    background-color: aqua;
+    border-top: none;
+    border-bottom: 2px solid white;
+ }
+
  .week-weather-info-container {
     display: grid;
     color: white;
@@ -87,8 +96,11 @@ main {
  .week-day-weather-row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 20px;    
+    gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, .2);    
  }
+
+
 
  .hourly-weather-info-container {
     position: relative;
@@ -165,6 +177,18 @@ main {
         opacity: 80%;
     }
 }
+
+.hourly-weather-image {
+    height: 28px;
+    width: 28px;
+}
+
+.week-day-weather-image img {
+    height: 36px;
+    width: 36px;
+}
+
+
 
 
 
