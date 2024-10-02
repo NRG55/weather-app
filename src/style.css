@@ -12,7 +12,8 @@ html, body {
 .top-nav {   
     display: grid;    
     align-items: center;
-    grid-template-columns: 1fr 360px 1fr;   
+    grid-template-columns: 1fr 360px 1fr; 
+    padding: 40px;  
 }
 
 .top-nav form {
@@ -109,7 +110,9 @@ main {
 
  .slider-wrap {    
     position: relative;
-    overflow: hidden;    
+    overflow: hidden;
+    width: 336px;
+    justify-self: center;    
  }
 
  .slider-content {

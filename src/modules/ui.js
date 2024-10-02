@@ -1,5 +1,6 @@
 export const renderDailyWeather = (weather) => {
     const weekWeatherInfoContainer = document.querySelector('.week-weather-info-container');
+    weekWeatherInfoContainer.innerHTML = '';
 
     weather.weekForecast.map((element) => {       
         weekWeatherInfoContainer.innerHTML += `
@@ -22,6 +23,7 @@ export const renderDailyWeather = (weather) => {
 
 export const renderTodayWeatherInfoCard = (weather) => {
     const todayWeatherInfoCard = document.querySelector('.today-info-card');
+    todayWeatherInfoCard.innerHTML = '';
     
     const mainWeatherInfoDiv = document.createElement('div');
     mainWeatherInfoDiv.innerHTML = `
@@ -52,6 +54,7 @@ export const renderTodayWeatherInfoCard = (weather) => {
     todayWeatherInfoCard.append(mainWeatherInfoDiv, additionalWeatherInfoDiv, hourlyWeatherInfoContainer);
     
     renderHourlyWeatherInfo(weather);
+    addEventListenerToSlider();
 
     return todayWeatherInfoCard;
 }
@@ -84,15 +87,40 @@ const renderSlider = () => {
 const renderSliderNavigationPanel = () => {
     return `
         <div class="nav-container">
-            <button id="button-previous"></button>
-            <div class="round-buttons-container">
-                <button></button>
-                <button></button>
-                <button></button>
-                <button></button>
-            </div>
+            <button id="button-previous"></button>           
             <button id="button-next"></button>            
         </div> 
     `
+}
+
+const addEventListenerToSlider = () => {
+    const sliderContent = document.querySelector(".slider-content");
+    const buttonNext = document.getElementById("button-next");
+    const buttonPrevious = document.getElementById("button-previous");    
+
+    let currentIndex = 0;
+
+    const slide = (index) => {   
+        if (index < 0) {
+            index = 2 -1;        
+        };
+
+        if (index >= 2) {
+            index = 0;        
+        };     
+    
+        console.log(`translateX(-${(index / 2) * 100}%)`)
+        sliderContent.style.transform = `translateX(-${(index / 2) * 100}%)`;
+        currentIndex = index;   
+    };
+
+    buttonNext.onclick = () => { 
+        console.log("click!")    
+        slide(currentIndex + 1);
+    };
+
+    buttonPrevious.onclick = () => {   
+        slide(currentIndex - 1);
+    };
 }
 
