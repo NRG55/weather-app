@@ -13,8 +13,8 @@ export const renderDailyWeather = (weather) => {
               alt=""
               />
           </div>    
-          <div class="week-day-temperature">${element.maxTemperature}</div>
-          <div class="week-night-temperature">${element.minTemperature}</div>                
+          <div class="week-day-temperature"><sup>&uarr;</sup>${element.maxTemperature}°</div>
+          <div class="week-night-temperature"><sup>&darr;</sup>${element.minTemperature}°</div>                
         </div>`                 
     });
 
@@ -26,15 +26,16 @@ export const renderTodayWeatherInfoCard = (weather) => {
     todayWeatherInfoCard.innerHTML = '';
     
     const mainWeatherInfoDiv = document.createElement('div');
+    mainWeatherInfoDiv.classList.add('today-weather-main-info');
     mainWeatherInfoDiv.innerHTML = `
-        <h3 class="location-name">${weather.location}</h3>
-        <p class="today-temperature">${weather.temperature}</p>
-        <img src="images/weather-images-filled/${weather.icon}.svg"> 
-        <p class="today-conditions">${weather.conditions}</p>
-       
+        <div class="location-name">${weather.location}</div>                   
+        <img src="images/weather-images-filled/${weather.icon}.svg">       
+        <div class="today-temperature">${weather.temperature}°</div>          
+        <div class="today-conditions">${weather.conditions}</div>       
     `; 
     
     const additionalWeatherInfoDiv = document.createElement('div');
+    additionalWeatherInfoDiv.classList.add('today-weather-extra-info');
     additionalWeatherInfoDiv.innerHTML = `
         <p id="humidity">Humidity:${weather.humidity}</p>
         <p id="wind">Wind:${weather.windSpeed}</p>
@@ -73,7 +74,7 @@ const renderHourlyWeatherInfo = (weather) => {
               alt=""
               />
           </div>    
-          <div class="hourly-weather-temperature">${hour.temperature}</div>               
+          <div class="hourly-weather-temperature">${hour.temperature}°</div>               
         </div>`         
     });
 }

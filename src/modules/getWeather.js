@@ -25,8 +25,8 @@ export const getWeather = async (location) => {
 function weatherDataMapper(data) {
     console.log(data)
     return {
-        location: data.resolvedAddress,
-        temperature: data.currentConditions.temp,
+        location: data.resolvedAddress.split(",")[0],
+        temperature: String(data.currentConditions.temp).split(".")[0],
         conditions: data.currentConditions.conditions,
         humidity: data.currentConditions.humidity,
         windSpeed: data.currentConditions.windspeed,
@@ -38,8 +38,8 @@ function weatherDataMapper(data) {
                         })),
         weekForecast: data.days.slice(1, 8).map(day => ({
                             weekDay: new Date(day.datetime).toLocaleDateString('en-US', {weekday: 'long'}),
-                            maxTemperature: day.tempmax,
-                            minTemperature: day.tempmin,                        
+                            maxTemperature: String(day.tempmax).split(".")[0],
+                            minTemperature: String(day.tempmin).split(".")[0],                        
                             icon: day.icon
                         }))
         
