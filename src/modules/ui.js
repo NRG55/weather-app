@@ -37,8 +37,26 @@ export const renderTodayWeatherInfoCard = (weather) => {
     const additionalWeatherInfoDiv = document.createElement('div');
     additionalWeatherInfoDiv.classList.add('today-weather-extra-info');
     additionalWeatherInfoDiv.innerHTML = `
-        <p id="humidity">Humidity:${weather.humidity}</p>
-        <p id="wind">Wind:${weather.windSpeed}</p>
+        <div>
+            <div class="date-wrap">
+                <img src="images/date.svg"> 
+                <div class="date">${weather.date}</div>
+            </div>
+            <div class="time-wrap">
+                <img src="images/time.svg">
+                <div class="time">${weather.time}</div>
+            </div>
+        </div>
+        <div>
+            <div class="humidity-wrap">
+                <img src="images/weather-images-lined/humidity.svg">           
+                <div id="humidity">${weather.humidity}%</div>
+            </div>
+            <div class="wind-wrap">
+                <img src="images/weather-images-lined/wind2.svg">            
+                <div id="wind">${weather.windSpeed}km/h</div>
+            </div>
+         </div>
     `;
     
     const hourlyWeatherInfoContainer = document.createElement('div');

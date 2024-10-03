@@ -97,9 +97,49 @@ main {
 
  .today-weather-extra-info {
     display: grid;
-    grid-template-rows: 20px 20px;
-    justify-items: end;   
+    grid-template-rows: 40px 1fr;
+    justify-items: end;     
  }
+
+ .today-weather-extra-info > div:first-of-type {
+    img {
+        width: 20px;
+        justify-self: end; 
+        margin-right: 8px;      
+    }
+
+    .date-wrap,
+    .time-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;         
+    }
+ }
+
+ .today-weather-extra-info > div:nth-child(2) {
+    display: grid; 
+    justify-self: center; 
+    align-self:center;
+    justify-items: center;
+    
+    .humidity-wrap, 
+    .wind-wrap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;       
+    }
+
+    img {
+        width: 48px;
+        justify-self: end;
+    }
+    
+    #humidity, 
+    #wind {
+        font-size: 20px;
+        font-weight: 700;
+    }
+}
 
  .location-name {
     font-size: 40px;

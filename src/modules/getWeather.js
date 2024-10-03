@@ -28,9 +28,11 @@ function weatherDataMapper(data) {
     return {
         location: data.resolvedAddress.split(",")[0],
         temperature: String(data.currentConditions.temp).split(".")[0],
+        date: new Date().toLocaleDateString(),
+        time: new Date().toLocaleTimeString().slice(0, -3),
         conditions: data.currentConditions.conditions,
-        humidity: data.currentConditions.humidity,
-        windSpeed: data.currentConditions.windspeed,
+        humidity: String(data.currentConditions.humidity).split(".")[0],
+        windSpeed: String(data.currentConditions.windspeed).split(".")[0],
         icon: data.currentConditions.icon,
         hourlyForecast: data.days[0].hours.map(hour => ({
                             time: hour.datetime.slice(0, 2),
