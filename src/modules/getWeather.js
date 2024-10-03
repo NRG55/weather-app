@@ -2,18 +2,19 @@ import { renderDailyWeather } from './ui';
 import { renderTodayWeatherInfoCard } from "./ui";
 
 export const getWeather = async (location) => {
-    const apiKey = 'ZFEZ9FB6LLYZUZ9DFDU7GJTMD';
-    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=metric&key=${apiKey}`;
+    const unitsCheckbox = document.querySelector('.units-checkbox');
+    const units = unitsCheckbox.checked ? 'us' : 'metric';
 
+    const apiKey = 'ZFEZ9FB6LLYZUZ9DFDU7GJTMD';
+    const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${units}&key=${apiKey}`;    
+    
     try {
     const response = await fetch(url, { mode: 'cors'});    
-    const data = weatherDataMapper(await response.json()); 
-   
+    const data = weatherDataMapper(await response.json());    
     
     renderTodayWeatherInfoCard(data);
     renderDailyWeather(data);
     console.log(data);
-
     
     return data;
 

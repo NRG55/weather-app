@@ -108,6 +108,7 @@ main {
  
  .today-temperature {
     font-size: 40px;
+    font-weight: bold;
  }
 
  .today-conditions {
