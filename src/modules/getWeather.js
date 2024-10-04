@@ -9,12 +9,20 @@ export const getWeather = async (location) => {
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${units}&key=${apiKey}`;    
     
     try {
-    const response = await fetch(url, { mode: 'cors'});    
+    const response = await fetch(url, { mode: 'cors'});
+    const errorMessage = document.querySelector('.error-message');    
+    
+    if (!response.ok) {
+        errorMessage.innerText = "Sorry, no location found";
+        errorMessage.classList.add('active');
+        setTimeout(() => errorMessage.classList.remove('active'), 3000);
+
+        return;
+    }
     const data = weatherDataMapper(await response.json());    
     
     renderTodayWeatherInfoCard(data);
     renderDailyWeather(data);
-    console.log(data);
     
     return data;
 

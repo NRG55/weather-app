@@ -50,11 +50,11 @@ export const renderTodayWeatherInfoCard = (weather) => {
         <div>
             <div class="humidity-wrap">
                 <img src="images/weather-images-lined/humidity.svg">           
-                <div id="humidity">${weather.humidity}%</div>
+                <div class="humidity">${weather.humidity}%</div>
             </div>
             <div class="wind-wrap">
                 <img src="images/weather-images-lined/wind2.svg">            
-                <div id="wind">${weather.windSpeed}km/h</div>
+                <div class="wind"></div>
             </div>
          </div>
     `;
@@ -73,6 +73,7 @@ export const renderTodayWeatherInfoCard = (weather) => {
     todayWeatherInfoCard.append(mainWeatherInfoDiv, additionalWeatherInfoDiv, hourlyWeatherInfoContainer);
     
     renderHourlyWeatherInfo(weather);
+    renderWindSpeed(weather.windSpeed);
     addEventListenerToSlider();
 
     return todayWeatherInfoCard;
@@ -110,6 +111,14 @@ const renderSliderNavigationPanel = () => {
             <button id="button-next"></button>            
         </div> 
     `
+}
+
+const renderWindSpeed = (windSpeed) => {
+    const wind = document.querySelector('.wind');
+    const unitsCheckbox = document.querySelector('.units-checkbox');
+    const unit = unitsCheckbox.checked ? 'mph' : 'km/h';
+
+    wind.innerHTML = windSpeed + unit;
 }
 
 

@@ -149,8 +149,8 @@ main {
         justify-self: end;
     }
     
-    #humidity, 
-    #wind {
+    .humidity, 
+    .wind {
         font-size: 20px;
         font-weight: 700;
     }
