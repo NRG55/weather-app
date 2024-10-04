@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Weather app</title>
+<script defer src="main.js"></script></head>
+<body>   
+    <header class="header-container">
+        <nav class="top-nav">
+            <div></div>
+            <form class="search-form">
+                <div class="search-container">
+                    <input 
+                      type="search"
+                      class="search-input"
+                      placeholder="Search location"
+                    />
+                    <button class="search-submit-button" type="submit">                       
+                        <img src="images/search.svg" alt="search">                     
+                    </button>
+                    <div class="error-message"></div>
+                    <span class="loader"></span>
+                </div>
+            </form>
+            <div>
+                <label class="switch">
+                    <input class="units-checkbox" type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </nav>
+    </header>    
+    <main>
+        <div class="today-info-card"></div>
+        <div class="week-weather-info-container"></div>
+    </main>
+</body>
+</html>
