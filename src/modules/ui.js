@@ -153,3 +153,13 @@ const addEventListenerToSlider = () => {
     };
 }
 
+export const loading = (state) => {
+    const loadingSpinner = document.querySelector('.loader');
+
+    if (state === 'started') {
+      loadingSpinner.classList.add('loader-active');     
+    } else {
+      loadingSpinner.classList.remove('loader-active');
+    }
+}
+

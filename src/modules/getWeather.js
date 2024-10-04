@@ -1,5 +1,6 @@
 import { renderDailyWeather } from './ui';
 import { renderTodayWeatherInfoCard } from "./ui";
+import { loading } from './ui';
 
 export const getWeather = async (location) => {
     const unitsCheckbox = document.querySelector('.units-checkbox');
@@ -8,23 +9,27 @@ export const getWeather = async (location) => {
     const apiKey = 'ZFEZ9FB6LLYZUZ9DFDU7GJTMD';
     const url = `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}?unitGroup=${units}&key=${apiKey}`;    
     
+    loading('started');
+
     try {
     const response = await fetch(url, { mode: 'cors'});
     const errorMessage = document.querySelector('.error-message');    
     
     if (!response.ok) {
+        loading('finished');
+
         errorMessage.innerText = "Sorry, no location found";
         errorMessage.classList.add('active');
         setTimeout(() => errorMessage.classList.remove('active'), 3000);
 
         return;
     }
-    const data = weatherDataMapper(await response.json());    
+
+    const data = weatherDataMapper(await response.json());
     
     renderTodayWeatherInfoCard(data);
-    renderDailyWeather(data);
-    
-    return data;
+    renderDailyWeather(data);    
+    loading('finished');    
 
     } catch (error) {
         console.log(error)
