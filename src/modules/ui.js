@@ -112,6 +112,7 @@ const renderSliderNavigationPanel = () => {
     `
 }
 
+
 const addEventListenerToSlider = () => {
     const sliderContent = document.querySelector(".slider-content");
     const buttonNext = document.getElementById("button-next");

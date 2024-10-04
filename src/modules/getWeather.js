@@ -19,6 +19,7 @@ export const getWeather = async (location) => {
     return data;
 
     } catch (error) {
+        console.log(error)
         console.error('Fetch weather API is failed', error);
     };
 }

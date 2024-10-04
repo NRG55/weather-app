@@ -24,8 +24,21 @@ html, body {
 }
 
 .search-container {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr auto;  
+}
+
+.error-message {
+    position: absolute;
+    display: none;
+    bottom: -24px;
+    left: 20px;
+    color: rgb(187, 187, 39);
+
+    &.active {
+        display: block;
+    }
 }
 
 .search-input {
@@ -37,16 +50,18 @@ html, body {
     font-size: 16px;
     background-color: transparent;
     outline: none;
-    color: white;     
+    color: white;
+    
+    &.search-input::-webkit-search-cancel-button {
+        display: none;
+    } 
 }
 
 .search-input::placeholder {
     color: rgb(177, 177, 179);
 }
 
-.search-input::-webkit-search-cancel-button {
-    display: none;
-}
+
 
 .search-submit-button {
     cursor: pointer;   
