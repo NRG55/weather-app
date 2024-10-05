@@ -53,7 +53,7 @@ export const renderTodayWeatherInfoCard = (weather) => {
                 <div class="humidity">${weather.humidity}%</div>
             </div>
             <div class="wind-wrap">
-                <img src="images/weather-images-lined/wind2.svg">            
+                <img src="images/weather-images-lined/wind.svg">            
                 <div class="wind"></div>
             </div>
          </div>
