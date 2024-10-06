@@ -31,14 +31,12 @@ export const getWeather = async (location) => {
     renderDailyWeather(data);    
     loading('finished');    
 
-    } catch (error) {
-        console.log(error)
+    } catch (error) {        
         console.error('Fetch weather API is failed', error);
     };
 }
 
-function weatherDataMapper(data) {
-    console.log(data)
+function weatherDataMapper(data) {    
     return {
         location: data.resolvedAddress.split(",")[0],
         temperature: String(data.currentConditions.temp).split(".")[0],
@@ -58,7 +56,6 @@ function weatherDataMapper(data) {
                             maxTemperature: String(day.tempmax).split(".")[0],
                             minTemperature: String(day.tempmin).split(".")[0],                        
                             icon: day.icon
-                        }))
-        
+                        }))        
     };
 }

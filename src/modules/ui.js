@@ -137,14 +137,12 @@ const addEventListenerToSlider = () => {
         if (index >= 2) {
             index = 0;        
         };     
-    
-        console.log(`translateX(-${(index / 2) * 100}%)`)
+        
         sliderContent.style.transform = `translateX(-${(index / 2) * 100}%)`;
         currentIndex = index;   
     };
 
-    buttonNext.onclick = () => { 
-        console.log("click!")    
+    buttonNext.onclick = () => {           
         slide(currentIndex + 1);
     };
 
