@@ -78,12 +78,12 @@ html, body {
     }
 }
 
-main {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 540px);
+main {  
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;   
     gap: 40px;
-    padding: 40px;   
+    padding: 40px;     
 } 
 
 .today-info-card {
@@ -246,12 +246,12 @@ main {
  }
 
 #button-previous {
-    background: url(/dist/images/chevron-left.svg) no-repeat;
+    background: url(./images/chevron-left.svg) no-repeat;
     background-position: 55% 50%;     
 }
 
 #button-next {
-    background: url(/dist/images/chevron-right.svg) no-repeat; 
+    background: url(./images/chevron-right.svg) no-repeat; 
     background-position: 45% 50%;    
 }
 
