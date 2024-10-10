@@ -40,8 +40,7 @@ function weatherDataMapper(data) {
     return {
         location: data.resolvedAddress.split(",")[0],
         temperature: String(data.currentConditions.temp).split(".")[0],
-        date: new Date().toLocaleDateString(),
-        time: new Date().toLocaleTimeString().slice(0, -3),
+        date: new Date().toLocaleDateString(),        
         conditions: data.currentConditions.conditions,
         humidity: String(data.currentConditions.humidity).split(".")[0],
         windSpeed: String(data.currentConditions.windspeed).split(".")[0],

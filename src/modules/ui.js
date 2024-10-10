@@ -72,6 +72,7 @@ export const renderTodayWeatherInfoCard = (weather) => {
 
     todayWeatherInfoCard.append(mainWeatherInfoDiv, additionalWeatherInfoDiv, hourlyWeatherInfoContainer);
     
+    displayTime();
     renderHourlyWeatherInfo(weather);
     renderWindSpeed(weather.windSpeed);
     addEventListenerToSlider();
@@ -121,6 +122,17 @@ const renderWindSpeed = (windSpeed) => {
     wind.innerHTML = windSpeed + unit;
 }
 
+const displayTime = () => {
+    const time = new Date().toLocaleTimeString(navigator.language, {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+    });
+   
+    document.querySelector('.time').innerHTML = time;
+    setTimeout(displayTime, 1000);
+}
+
 
 const addEventListenerToSlider = () => {
     const sliderContent = document.querySelector(".slider-content");
@@ -160,4 +172,6 @@ export const loading = (state) => {
       loadingSpinner.classList.remove('loader-active');
     }
 }
+
+
 
