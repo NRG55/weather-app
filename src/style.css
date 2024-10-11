@@ -31,6 +31,18 @@ html, body {
     padding: 40px;  
 }
 
+.logo {
+    color: rgb(60, 176, 243);
+    justify-self: center;
+    font-weight: bold;
+    font-size: 20px;
+    transform: scaleX(0.9);
+}
+
+.logo > span:nth-child(2) {
+    color: #e9b31f;
+}
+
 .top-nav form {
     justify-self: center;    
 }
@@ -46,7 +58,7 @@ html, body {
     display: none;
     bottom: -24px;
     left: 20px;
-    color: rgb(214, 214, 30);   
+    color: #e9b31f;   
 }
 
 .search-input {
