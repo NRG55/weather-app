@@ -32,15 +32,24 @@ html, body {
 }
 
 .logo {
-    color: rgb(60, 176, 243);
+    display: flex;
+    align-items: center;
+    color: rgb(34, 163, 248);
     justify-self: center;
     font-weight: bold;
     font-size: 20px;
     transform: scaleX(0.9);
-}
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 
-.logo > span:nth-child(2) {
-    color: #e9b31f;
+    img {
+        width: 36px; 
+        margin-right: 8px;
+        transform: scaleX(1.1);
+    }
+    
+    span:nth-child(2) {
+        color: #e6b42d;
+    }
 }
 
 .top-nav form {
