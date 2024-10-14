@@ -24,6 +24,8 @@ html, body {
     font-family: 'Nunito', sans-serif;   
 }
 
+/* -----------------HEADER------------------ */
+
 .top-nav {   
     display: grid;    
     align-items: center;
@@ -106,6 +108,8 @@ html, body {
     }
 }
 
+/* -------------------MAIN-------------------- */
+
 main {  
     display: flex;
     flex-wrap: wrap;
@@ -126,17 +130,17 @@ main {
     padding: 20px;    
     color: white;
     background-color: var(--half-transparent);    
- }
-
- img {   
-    width: 124px;            
- }
+ } 
 
  .today-weather-main-info {
     display: grid;
     grid-template-rows: auto 100px 36px 1fr;
     justify-items: center;
     align-items: center;
+
+    img {   
+        width: 124px;            
+     }
  }
 
  .today-weather-extra-info {
@@ -249,6 +253,8 @@ main {
     gap: 4px;
  }
 
+ /* --------Hourly-weather-navigation-------- */
+
  .slider-wrap {    
     position: relative;
     overflow: hidden;
@@ -314,6 +320,8 @@ main {
     align-self: center;
 }
 
+/* ------------Temperature-units-switch------------ */
+
 .switch {
     position: relative;
     display: inline-block;
@@ -375,6 +383,8 @@ input:checked + .slider:before {
     display: block;
 }
 
+/* --------------Spinning-loader-------------- */
+
 .loader {    
     position: absolute;
     display: none;
@@ -420,6 +430,8 @@ input:checked + .slider:before {
       box-shadow: 0em -2.6em 0em 0em rgba(255,255,255, 0.2), 1.8em -1.8em 0 0em rgba(255,255,255, 0.2), 2.5em 0em 0 0em rgba(255,255,255, 0.2), 1.75em 1.75em 0 0em rgba(255,255,255, 0.2), 0em 2.5em 0 0em rgba(255,255,255, 0.2), -1.8em 1.8em 0 0em rgba(255,255,255, 0.5), -2.6em 0em 0 0em rgba(255,255,255, 0.7), -1.8em -1.8em 0 0em #ffffff;
     }
   }
+
+  /* ----------------FOOTER------------------- */
 
   footer {
     margin-top: auto;    
