@@ -56,6 +56,14 @@ export const renderTodayWeatherInfoCard = (weather) => {
                 <img src="images/weather-images-lined/wind.svg">            
                 <div class="wind"></div>
             </div>
+            <div class="sunrise-wrap">
+                <img src="images/weather-images-lined/sunrise.svg">            
+                <div class="sunrise">${weather.sunrise}</div>
+            </div>
+            <div class="sunset-wrap">
+                <img src="images/weather-images-lined/sunset.svg">            
+                <div class="sunset">${weather.sunset}</div>
+            </div>
          </div>
     `;
     

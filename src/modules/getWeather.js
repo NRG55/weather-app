@@ -26,7 +26,7 @@ export const getWeather = async (location) => {
     }
 
     const data = weatherDataMapper(await response.json());
-    
+    console.log(data)
     renderTodayWeatherInfoCard(data);
     renderDailyWeather(data);    
     loading('finished');    
@@ -36,7 +36,8 @@ export const getWeather = async (location) => {
     };
 }
 
-function weatherDataMapper(data) {    
+function weatherDataMapper(data) {
+    console.log(data)    
     return {
         location: data.resolvedAddress.split(",")[0],
         temperature: String(data.currentConditions.temp).split(".")[0],
@@ -44,6 +45,8 @@ function weatherDataMapper(data) {
         conditions: data.currentConditions.conditions,
         humidity: String(data.currentConditions.humidity).split(".")[0],
         windSpeed: String(data.currentConditions.windspeed).split(".")[0],
+        sunrise: data.currentConditions.sunrise.slice(0,5),
+        sunset: data.currentConditions.sunset.slice(0,5),
         icon: data.currentConditions.icon,
         hourlyForecast: data.days[0].hours.map(hour => ({
                             time: hour.datetime.slice(0, 2),
