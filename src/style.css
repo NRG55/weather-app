@@ -36,7 +36,7 @@ html, body {
 .logo {
     display: flex;
     align-items: center;
-    color: rgb(34, 163, 248);
+    color: #2885C7;
     justify-self: center;
     font-weight: bold;
     font-size: 20px;
@@ -50,7 +50,7 @@ html, body {
     }
     
     span:nth-child(2) {
-        color: #e6b42d;
+        color: #F59E0B;
     }
 }
 
@@ -167,26 +167,31 @@ main {
 
  .today-weather-extra-info > div:nth-child(2) {
     display: grid; 
+    grid-template-columns: 1fr 1fr;
     justify-self: center; 
     align-self:center;
     justify-items: center;
     
+    img {
+        width: 40px;       
+    }
+    
     .humidity-wrap, 
     .wind-wrap {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: auto 48px;
         align-items: center;       
+        padding-bottom: 20px;        
     }
-
-    img {
-        width: 48px;
-        justify-self: end;
+    
+    .humidity-wrap img, 
+    .wind-wrap img {
+        width: 32px;       
     }
     
     .humidity, 
     .wind {
-        font-size: 20px;
-        font-weight: 700;
+        font-size: 16px;        
     }
 }
 
@@ -223,7 +228,7 @@ main {
         text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
         font-size: 20px;
         font-weight: 600;
-        color: rgb(247, 185, 135);
+        color: #F59E0B;
     }
 
     .week-day-temperature,
@@ -441,7 +446,7 @@ input:checked + .slider:before {
     color: rgb(204, 202, 202);
 
     a {
-        color: rgb(120, 179, 247);
+        color: #2885C7;
     }
   }
 
